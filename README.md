@@ -7,7 +7,7 @@ Native `TextInput` component.
 ## Installation
 
 ```sh
-npm install react-native-rn-currency-input
+npm install rn-currency-input
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ By default the component will mask to North American currency and clear input.
 
 ```js
 import { useState } from 'react';
-import { CurrencyInput } from 'react-native-rn-currency-input';
+import { CurrencyInput } from 'rn-currency-input';
 
 function MoneyInput() {
   const [value, setValue] = useState(0);
