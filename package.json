@@ -36,6 +36,9 @@
   },
   "keywords": [
     "react-native",
+    "textinput",
+    "currency",
+    "masking",
     "ios",
     "android"
   ],
