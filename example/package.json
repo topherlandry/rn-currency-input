@@ -1,5 +1,5 @@
 {
-  "name": "react-native-rn-currency-input-example",
+  "name": "rn-currency-input-example",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
