@@ -1,6 +1,6 @@
 {
-  "name": "react-native-rn-currency-input",
-  "version": "0.1.0",
+  "name": "rn-currency-input",
+  "version": "1.0.0",
   "description": "Simple currency input for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -26,7 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-rn-currency-input-example",
+    "example": "yarn workspace rn-currency-input-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/topherlandry/react-native-rn-currency-input.git"
+    "url": "git+https://github.com/topherlandry/rn-currency-input.git"
   },
-  "author": "Landry <landry@hey.con> (https://github.com/topherlandry)",
+  "author": "Landry <landry@hey.com> (https://github.com/topherlandry)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/topherlandry/react-native-rn-currency-input/issues"
+    "url": "https://github.com/topherlandry/rn-currency-input/issues"
   },
-  "homepage": "https://github.com/topherlandry/react-native-rn-currency-input#readme",
+  "homepage": "https://github.com/topherlandry/rn-currency-input#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
