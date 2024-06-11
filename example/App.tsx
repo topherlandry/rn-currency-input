@@ -7,34 +7,15 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { TextInput } from 'react-native-paper';
 
 import { CurrencyInput } from 'rn-currency-input';
 
 export default function App() {
   const [value, setValue] = useState(0);
-  const [paperValue, setPaperValue] = useState(0);
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <View style={styles.exampleContainer}>
-          <TextInput
-            label="Amount"
-            mode="outlined"
-            value={paperValue.toString()}
-            dense
-            render={(props) => (
-              <CurrencyInput
-                {...props}
-                pureValue={value}
-                setValue={setPaperValue}
-              />
-            )}
-            style={styles.paperInput}
-          />
-          <Text>Pure Value: {paperValue}</Text>
-        </View>
         <View style={styles.exampleContainer}>
           <CurrencyInput
             pureValue={value}

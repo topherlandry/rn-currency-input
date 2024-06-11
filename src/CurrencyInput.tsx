@@ -59,6 +59,7 @@ function CurrencyInput({
   const handleKeyPress = (
     e: NativeSyntheticEvent<TextInputKeyPressEventData>
   ) => {
+    console.log('Is this a thing?');
     const keyValue = e.nativeEvent.key;
     const pureValue = displayValue.replace(/\D/g, '');
     const cleanedValue = parseInt(pureValue.concat(keyValue), 10);

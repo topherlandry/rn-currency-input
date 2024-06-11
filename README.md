@@ -4,6 +4,11 @@ This is a simple currency input for React Native. It allows for user input of
 a currency value without flickering and only being built with the React
 Native `TextInput` component.
 
+At the moment this can't be used as a render component in React Native Paper
+due to the lack of forward ref support on `TextInputFlat` and
+`TextInputOutlined`. If there's an issue raised, can create a Paper specific
+component for the time being.
+
 ## Installation
 
 ```sh
@@ -29,6 +34,8 @@ function MoneyInput() {
   return <CurrencyInput value={value} setValue={setValue} />;
 }
 ```
+
+A working example is provided in `/example`.
 
 ## Contributing
 
