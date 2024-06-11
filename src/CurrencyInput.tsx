@@ -8,16 +8,18 @@ import type {
   TextInputFocusEventData,
   TextInputKeyPressEventData,
   ViewProps,
+  ViewStyle,
 } from 'react-native';
 
 interface ICurrencyInputProps extends ViewProps {
-  value: number;
+  pureValue: number;
   setValue: Dispatch<SetStateAction<number>>;
   applyMask?: (value: number) => string;
+  onBlur?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
   onFocus?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
   onKeyPress?: (e: NativeSyntheticEvent<TextInputKeyPressEventData>) => void;
   resetOnFocus?: boolean;
-  style?: StyleProp<ViewProps>;
+  style?: StyleProp<ViewStyle>;
 }
 
 function applyNorthAmericanMask(value: number) {
@@ -26,16 +28,26 @@ function applyNorthAmericanMask(value: number) {
 }
 
 function CurrencyInput({
-  value,
+  pureValue,
   setValue,
   applyMask = applyNorthAmericanMask,
+  onBlur,
   onFocus,
   onKeyPress,
   resetOnFocus = true,
   style,
   ...props
 }: ICurrencyInputProps) {
-  const [displayValue, setDisplayValue] = useState(applyMask(value));
+  const [displayValue, setDisplayValue] = useState(applyMask(pureValue));
+
+  const handleBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+    if (displayValue === '') {
+      const maskedValue = applyMask(pureValue);
+      setDisplayValue(maskedValue);
+    }
+
+    onBlur?.(e);
+  };
 
   const handleFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     if (resetOnFocus) {
@@ -62,6 +74,7 @@ function CurrencyInput({
   return (
     <TextInput
       value={displayValue}
+      onBlur={handleBlur}
       onKeyPress={handleKeyPress}
       onFocus={handleFocus}
       maxLength={displayValue.length}
