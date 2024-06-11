@@ -13,7 +13,7 @@ npm install rn-currency-input
 ## Usage
 
 The props interface extends the `TextInput` interface so all standard props
-and styling and are available.
+and styling are available.
 
 You can provide props for the masking function and whether to clear the input
 on focus.
