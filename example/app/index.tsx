@@ -1,9 +1,8 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 export default function App() {
-  const [result, _] = React.useState<number | undefined>();
+  const [result, _] = useState<number | undefined>();
 
   return (
     <View style={styles.container}>
