@@ -31,7 +31,7 @@ export default function App() {
                 setValue={setPaperValue}
               />
             )}
-            style={{ width: '50%', textAlign: 'right' }}
+            style={styles.paperInput}
           />
           <Text>Pure Value: {paperValue}</Text>
         </View>
